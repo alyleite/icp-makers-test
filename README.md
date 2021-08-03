@@ -1,20 +1,58 @@
 # hello
 
-Welcome to your new hello project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+This example demonstrates a application on the [Internet Computer](https://dfinity.org) using
+[Motoko](https://sdk.dfinity.org/docs/language-guide/motoko.html) that is accessible from your web browser
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+## Prerequisites
 
-To learn more before you start working with hello, see the following documentation available online:
+Verify the following before running this demo:
 
-- [Quick Start](https://sdk.dfinity.org/docs/quickstart/quickstart-intro.html)
-- [SDK Developer Tools](https://sdk.dfinity.org/docs/developers-guide/sdk-guide.html)
-- [Motoko Programming Language Guide](https://sdk.dfinity.org/docs/language-guide/motoko.html)
-- [Motoko Language Quick Reference](https://sdk.dfinity.org/docs/language-guide/language-manual.html)
+*  You have downloaded and installed [Node.js](https://nodejs.org).
 
-If you want to start working on your project right away, you might want to try the following commands:
+*  You have downloaded and installed the [DFINITY Canister
+   SDK](https://sdk.dfinity.org).
 
-```bash
-cd hello/
-dfx help
-dfx config --help
-```
+*  You have stopped any Internet Computer or other network process that would
+   create a port conflict on 8000.
+
+## Demo
+
+1. Start a local internet computer.
+
+   ```text
+   dfx start
+   ```
+
+1. Open a new terminal window.
+
+1. Reserve an identifier for your canister.
+
+   ```text
+   dfx canister create --all
+   ```
+
+1. Build your front-end.
+
+   ```text
+   npm install
+   ```
+
+1. Build your canister.
+
+   ```text
+   dfx build
+   ```
+
+1. Deploy your canister.
+
+   ```text
+   dfx canister install --all
+   ```
+
+1. Take note of the URL at which the canister is accessible.
+
+   ```text
+   echo "http://localhost:8000/?canisterId=$(dfx canister id www)"
+   ```
+
+1. Open the aforementioned URL in your web browser.
