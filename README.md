@@ -52,7 +52,7 @@ Verify the following before running this demo:
 1. Take note of the URL at which the canister is accessible.
 
    ```text
-   echo "http://localhost:8000/?canisterId=$(dfx canister id www)"
+   echo "http://localhost:8000/?canisterId=$(dfx canister id hello)"
    ```
 
 1. Open the aforementioned URL in your web browser.
